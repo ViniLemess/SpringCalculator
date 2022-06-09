@@ -3,8 +3,6 @@
 .idea/
 gradle-app.setting
 
-*gradle-wrapper.properties
-
 .gradletasknamecache
 
 *.class
@@ -14,8 +12,5 @@ gradle-app.setting
 *.css
 *.js
 *.idx
-
-# Package Files #
-*.jar
 
 .vscode/settings.json
