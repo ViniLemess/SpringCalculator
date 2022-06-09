@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.vinilemess.cloud-native.calculator'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
+}
+
+ext {
+    springVersion = '5.3.20'
+    junitVersion = '5.8.2'
+    springBootVersion = '2.6.7'
+}
+
+dependencies {
+    implementation "org.springframework:spring-context:$springVersion"
+    implementation "org.springframework:spring-core:$springVersion"
+    implementation "org.springframework:spring-beans:$springVersion"
+    implementation "org.springframework:spring-test:$springVersion"
+    implementation "org.springframework:spring-web:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
