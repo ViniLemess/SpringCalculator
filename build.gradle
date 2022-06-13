@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'war'
 }
 
 group 'com.vinilemess.cloud-native.calculator'
@@ -32,3 +31,4 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
