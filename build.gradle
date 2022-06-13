@@ -1,4 +1,6 @@
 plugins {
+    id 'org.springframework.boot' version '2.6.8'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
@@ -13,7 +15,6 @@ repositories {
 ext {
     springVersion = '5.3.20'
     junitVersion = '5.8.2'
-    springBootVersion = '2.6.7'
 }
 
 dependencies {
@@ -22,9 +23,9 @@ dependencies {
     implementation "org.springframework:spring-beans:$springVersion"
     implementation "org.springframework:spring-test:$springVersion"
     implementation "org.springframework:spring-web:$springVersion"
-    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
-    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
