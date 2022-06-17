@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Download Artifactory') {
             steps {
-                rtUpload (
+                rtDownload (
                     serverId:"ArtifactoryJfrog",
                      spec: '''{
                          "files": [
