@@ -19,7 +19,7 @@
     },
     {
       "type": "file",
-      "source": "SpringCalculator-Infra/calculator-1.0-SNAPSHOT.jar",
+      "source": "calculator-1.0-SNAPSHOT.jar",
       "destination": "/home/calculator-1.0-SNAPSHOT.jar"
     },
     {
