@@ -5,7 +5,7 @@
       "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
-        "ENTRYPOINT [\"java\", \"-jar\", \"/SpringCalculator-infra/calculator-1.0-SNAPSHOT.jar\"]"
+        "ENTRYPOINT [\"java\", \"-jar\", \"/home/calculator-1.0-SNAPSHOT.jar\"]"
       ]
     }
   ],
@@ -14,9 +14,13 @@
       "type": "shell",
       "inline": [
         "apt update",
-        "apt install -y ansible",
-        "pwd && ls -la"
+        "apt install -y ansible"
       ]
+    },
+    {
+      "type": "file",
+      "source": "../../calculator-1.0-SNAPSHOT.jar",
+      "destination": "/home/calculator-1.0-SNAPSHOT.jar"
     },
     {
       "type": "ansible-local",
