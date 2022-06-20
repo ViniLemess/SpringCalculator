@@ -2,30 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Preparation') {
-            steps {
-                git 'https://github.com/ViniLemess/SpringCalculator.git'
-            }
-        }
         stage('Download Artifactory') {
             steps {
                 rtDownload (
                     serverId:"ArtifactoryJfrog",
-                     spec: '''{
+                    spec: '''{
                          "files": [
                              {
                                  "pattern": "spring-calculator",
                                  "target": "./"
                              }
                          ]
-                     }''',
-                )
-            }
-        }
-        stage('Publish build info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "ArtifactoryJfrog"
+                    }''',
                 )
             }
         }
