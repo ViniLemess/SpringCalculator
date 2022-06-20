@@ -5,8 +5,7 @@
       "image": "ubuntu:20.04",
       "commit": true,
       "changes": [
-        "EXPOSE 8080",
-        "ENTRYPOINT [\"java\", \"-jar\", \"SpringCalculator-infra/calculator-1.0-SNAPSHOT.jar\"]"
+        "ENTRYPOINT [\"java\", \"-jar\", \"/SpringCalculator-infra/calculator-1.0-SNAPSHOT.jar\"]"
       ]
     }
   ],
