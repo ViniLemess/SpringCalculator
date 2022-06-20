@@ -1,0 +1,12 @@
+---
+- name: Install java 17
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install java 17
+      apt:
+        name: openjdk-17-jre
+
+
+

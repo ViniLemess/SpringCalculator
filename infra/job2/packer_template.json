@@ -1,0 +1,26 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu:20.04",
+      "commit": true,
+      "changes": [
+        "EXPOSE 8080",
+        "ENTRYPOINT [\"java\", \"-jar\", \"SpringCalculator-infra/calculator-1.0-SNAPSHOT.jar\"]"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apt update",
+        "apt install -y ansible"
+      ]
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "./playbook.yaml"
+    }
+  ]
+}
