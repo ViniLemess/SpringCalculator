@@ -1,4 +1,8 @@
 {
+  "variables": {
+      "dockerhub_username": "",
+      "dockerhub_password": ""
+  },
   "builders": [
     {
       "type": "docker",
@@ -25,6 +29,19 @@
     {
       "type": "ansible-local",
       "playbook_file": "infra/job2/playbook.yaml"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "vinilemess/spring-calculator",
+      "tag": "0.1"
+    },
+    {
+      "type": "docker-push",
+      "login": true,
+      "login_username": "{{user `dockerhub_username`}}",
+      "login_password": "{{user `dockerhub_password`}}"
     }
   ]
 }

@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        DOCKERHUB_USERNAME = credentials('dockerhub_username')
+        DOCKERHUB_PASSWORD = credentials('dockerhub_password')
+    }
     stages {
         stage('Download Artifactory') {
             steps {
@@ -17,10 +20,9 @@ pipeline {
                 )
             }
         }
-        stage('Build Docker Image') {
+        stage('Build Docker Image and Publish on Dockerhub') {
             steps {
-                sh "ls -la"
-                sh "packer build infra/job2/packer_template.json"
+                sh "packer build -var 'dockerhub_username=$DOCKERHUB_USERNAME' -var 'dockerhub_password=$DOCKERHUB_PASSWORD' infra/job2/packer_template.json"
             }
         }
     }
