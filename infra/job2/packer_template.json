@@ -14,7 +14,8 @@
       "type": "shell",
       "inline": [
         "apt update",
-        "apt install -y ansible"
+        "apt install -y ansible",
+        "pwd && ls -la"
       ]
     },
     {
