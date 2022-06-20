@@ -19,8 +19,8 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh "packer build ./packer_template.json"
                 sh "pwd"
+                sh "packer build ./packer_template.json"
             }
         }
     }
