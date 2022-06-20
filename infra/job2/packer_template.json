@@ -32,16 +32,18 @@
     }
   ],
   "post-processors": [
-    {
-      "type": "docker-tag",
-      "repository": "vinilemess/spring-calculator",
-      "tag": "0.1"
-    },
-    {
-      "type": "docker-push",
-      "login": true,
-      "login_username": "{{user `dockerhub_username`}}",
-      "login_password": "{{user `dockerhub_password`}}"
-    }
+    [
+      {
+        "type": "docker-tag",
+        "repository": "vinilemess/spring-calculator",
+        "tag": "0.1"
+      },
+      {
+        "type": "docker-push",
+        "login": true,
+        "login_username": "{{user `dockerhub_username`}}",
+        "login_password": "{{user `dockerhub_password`}}"
+      }
+    ]
   ]
 }
