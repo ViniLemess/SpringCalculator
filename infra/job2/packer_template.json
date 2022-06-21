@@ -35,7 +35,7 @@
     [
       {
         "type": "docker-tag",
-        "repository": "vinilemess/spring-calculator",
+        "repository": "{{user `dockerhub_username`}}/spring-calculator",
         "tag": "0.1"
       },
       {

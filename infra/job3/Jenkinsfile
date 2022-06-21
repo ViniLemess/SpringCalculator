@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_LOGIN = credentials('dockerhub-login')
+    }
+    stages {
+        stage('Pull Spring Calculator Image From Dockerhub') {
+            steps {
+                sh 'docker pull ${DOCKERHUB_LOGIN_USR}/spring-calculator:0.1'
+            }
+        }
+        stage('Run Spring Calculator') {
+            steps {
+                sh 'docker run --name calculator -dp 8090:8080 ${DOCKERHUB_LOGIN_USR}/spring-calculator:0.1'
+            }
+        }
+    }
+}
